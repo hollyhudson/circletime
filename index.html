@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Circle Calendar Test</title>
+</head>
+
+<body>
+
+<div style="width:800px;height:800px">
+	<canvas id="myNapchart"></canvas>
+</div>
+
+<script src="dist/napchart.min.js"></script>
+<script>
+	var colorTags = [
+		{ color: 'grey', tag: 'sleep' },
+		{ color: 'green', tag: 'projects' },
+		{ color: 'brown', tag: 'cooking' },
+	]
+
+	var ctx = document.getElementById('myNapchart').getContext('2d')
+	var myNapchart = Napchart.init(ctx, {
+		// data goes here
+		shape: 'circle',
+		lanes: 2,
+		colorTags,
+		elements: [
+			{
+				'start':720,
+				'end': 790,
+				'text': '🍽'
+			},
+			{
+				'start':1420,
+				'end':400
+			}
+		]},
+		{
+			// options
+			interaction: true,
+			penMode: true,
+			background: 'transparent',
+			fontColor: '#aaaaaa',
+		}
+	)
+</script>
+
+</body>
+</html>
